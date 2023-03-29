@@ -1,0 +1,68 @@
+:root {
+    --padding: 20px;
+    --start-size: calc(var(--padding) * 2);
+    --image-padding: calc(var(--padding) / 2);
+    --border-size: 2px;
+    --border-color: #a19d85;
+    --bg-color: #1a1a17;
+}
+
+.fixed-top {
+    box-shadow: 0 0 10px 12px #212529;
+}
+.fixed-top * {
+    user-select: none;
+}
+.for-fix-top {
+    padding-top: 70px;
+}
+.full-model {
+    background: rgb(0 0 0 / 25%);
+}
+.full-model hr:last-child {
+    display: none;
+}
+/* card */
+.card-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(min(100%/1, max(200px, 100%/5)), 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.card {
+    overflow: hidden;
+    height: 300px;
+}
+
+.card img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.carousel,
+.carousel-inner {
+    height: 100%;
+}
+
+[data-bs-theme='dark'] .carousel .carousel-control-next-icon,
+[data-bs-theme='dark'] .carousel .carousel-control-prev-icon {
+    filter: initial;
+}
+[data-bs-theme=dark] .carousel .carousel-indicators [data-bs-target] {
+    background-color: #fff;
+}

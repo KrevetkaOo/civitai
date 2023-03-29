@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>API Civitai.com</title>
+        <link rel="shortcut icon" href="//civitai.com/favicon.ico" type="image/x-icon" />
+        <link href="//cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script src="//cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="main.css" />
+        <script src="main.js" defer></script>
+    </head>
+    <body onload="load()" class="for-fix-top">
+        <header class="fixed-top pt-2 bg-dark">
+            <div class="container-fluid">
+                <form id="get-models" class="row g-2">
+                    <div class="col-auto">
+                        <button id="prevPage" disabled type="button" class="btn btn-primary">Назад</button>
+                    </div>
+
+                    <div class="col">
+                        <div class="input-group mb-1">
+                            <label class="input-group-text" for="sort">Сортировка</label>
+                            <select class="form-select shadow-none" name="sort" id="sort">
+                                <option value="Highest Rated">Наилучшая оценка</option>
+                                <option value="Most Downloaded">Наибольшее скачивание</option>
+                                <option value="Newest">Новейшие</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="input-group mb-1">
+                            <label class="input-group-text" for="limit">кол-во на страницу</label>
+                            <input class="form-control shadow-none" type="number" name="limit" id="limit" step="10" min="10" max="100" value="50" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="input-group mb-2">
+                            <label class="input-group-text" for="page">страница</label>
+                            <input class="form-control shadow-none" readonly type="number" name="page" min="1" id="page" value="1" />
+                        </div>
+                    </div>
+
+                    <div class="col-auto">
+                        <button id="nextPage" disabled type="button" class="btn btn-primary">Вперёд</button>
+                    </div>
+                    <button id="submit" hidden type="submit" class="btn btn-primary">Смотреть</button>
+                </form>
+            </div>
+            <hr class="p-0 my-0" />
+        </header>
+        <main class="container-fluid" id="content"></main>
+        <footer>
+            <!-- footer -->
+        </footer>
+        <!-- Modal -->
+        <div class="modal fade" id="imagesGalleryModal">
+            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header p-2">
+                        <h1 class="modal-title fs-5" id="imagesGalleryModalLabel">Modal title</h1>
+                        <div class="d-flex align-items-center">
+                            <button type="button" class="btn btn-sm btn-secondary mx-2" id="dl-image">Скачать</button>
+                            <button type="button" class="btn-close mx-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body m-0 p-0"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
